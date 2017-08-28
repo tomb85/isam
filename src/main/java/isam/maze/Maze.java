@@ -28,4 +28,13 @@ public interface Maze {
 
     void show();
 
+    int getHeight();
+
+    int getWidth();
+
+    int getStart();
+
+    int getEnd();
+
+    int getSize();
 }

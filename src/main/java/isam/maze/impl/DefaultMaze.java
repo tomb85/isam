@@ -27,6 +27,31 @@ public class DefaultMaze implements Maze {
         this.maze = maze;
     }
 
+    @Override
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public int getWidth() {
+        return width;
+    }
+
+    @Override
+    public int getStart() {
+        return start;
+    }
+
+    @Override
+    public int getEnd() {
+        return end;
+    }
+
+    @Override
+    public int getSize() {
+        return maze.length;
+    }
+
     static Builder builder() {
         return new Builder();
     }

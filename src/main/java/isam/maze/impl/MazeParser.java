@@ -13,15 +13,16 @@ import java.util.stream.IntStream;
 
 public class MazeParser {
 
-    // TODO static int constants
-    // TODO unit tests
+    private static final int DIMENSIONS = 0;
+    private static final int START_POS = 1;
+    private static final int END_POS = 2;
 
     public Maze parse(Path path) throws IOException {
         List<String> lines = Files.readAllLines(path);
         DefaultMaze.Builder builder = DefaultMaze.builder();
-        parseFields(lines.get(0), builder::withDimensions);
-        parseFields(lines.get(1), builder::withStart);
-        parseFields(lines.get(2), builder::withEnd);
+        parseFields(lines.get(DIMENSIONS), builder::withDimensions);
+        parseFields(lines.get(START_POS), builder::withStart);
+        parseFields(lines.get(END_POS), builder::withEnd);
         parseMaze(lines, builder::withMaze);
         return builder.build();
     }

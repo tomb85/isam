@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class MazeTest {
+public class MazeEndToEndTest {
 
     // TODO more tests
 
