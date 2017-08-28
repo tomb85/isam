@@ -19,6 +19,7 @@ public class MazeEndToEndTest {
     @Test
     @Parameters(named = "mazes")
     public void shouldSolveMaze(String resource) throws URISyntaxException {
+        System.out.println("Running end to end test to solve maze: " + resource);
         Path path = Paths.get(ClassLoader.getSystemResource(resource).toURI());
         Maze maze = Maze.parse(path);
         boolean solved = maze.solve();
@@ -28,6 +29,7 @@ public class MazeEndToEndTest {
 
     @Test
     public void shouldNotSolveMazeWithNoSolution() throws URISyntaxException {
+        System.out.println("Running end to end test to try solve maze with no solution");
         Path path = Paths.get(ClassLoader.getSystemResource("maze/no_solution.txt").toURI());
         Maze maze = Maze.parse(path);
         boolean solved = maze.solve();

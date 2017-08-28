@@ -8,8 +8,6 @@ import java.nio.file.Paths;
 
 public interface Maze {
 
-    // TODO javadoc
-
     MazeParser PARSER = new MazeParser();
 
     static Maze parse(Path path) {
@@ -18,10 +16,6 @@ public interface Maze {
         } catch (IOException e) {
             throw new RuntimeException("Unable to parse the maze", e);
         }
-    }
-
-    static Maze parse(String file) {
-        return parse(Paths.get(file));
     }
 
     boolean solve();
